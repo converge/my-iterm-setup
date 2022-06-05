@@ -42,3 +42,17 @@ alias ..='cd ..'
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
+
+# zsh history config
+HISTFILE=~/.zsh_history
+HISTSIZE=100000
+SAVEHIST=100000
+HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1                # all search results returned will be unique
+setopt incappendhistory                                 # add commmand to history as soon as it's entered
+setopt extendedhistory                                  # save command timestamp
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_SAVE_NO_DUPS                                # don't write duplicate entries in the history file
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_SPACE                                # prefix commands you don't want stored with a space
+HISTORY_IGNORE="(exit|ls|r|open|pwd|q|x *|kill *|s *|cd *)"
