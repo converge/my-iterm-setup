@@ -1,3 +1,5 @@
+set -o vi
+# case insensitive file/folder match
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 
 function __git_prompt_git() {
@@ -21,9 +23,11 @@ fi
 
 autoload -Uz compinit && compinit
 
-source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+plugins=(git zsh-history-substring-search)
+
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 eval "$(starship init zsh)"
 
@@ -34,10 +38,7 @@ alias d='git diff'
 alias k='kubectl'
 alias ..='cd ..'
 
-plugins=(git zsh-history-substring-search)
-
 # bind keys up and down for zsh-history-substring-search
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
-set -o vi
