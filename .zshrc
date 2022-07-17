@@ -56,3 +56,6 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_SPACE                                # prefix commands you don't want stored with a space
 HISTORY_IGNORE="(exit|ls|r|open|pwd|q|x *|kill *|s *|cd *)"
+
+export GOPATH="$HOME/go"
+PATH="$GOPATH/bin:$PATH"
